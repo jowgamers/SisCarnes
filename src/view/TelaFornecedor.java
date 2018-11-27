@@ -289,7 +289,7 @@ public class TelaFornecedor extends JPanel {
 		lblCadastrar.add(btnNewButton);
 
 		DefaultTableModel modelo = (DefaultTableModel) jTFor.getModel();
-		//lerJTable();
+		lerJTable();
 		
 		txtCpfFrn = new JTextField();
 		txtCpfFrn.setColumns(10);
@@ -443,7 +443,7 @@ public class TelaFornecedor extends JPanel {
 
 
 		DefaultTableModel modeloItemCompra = (DefaultTableModel) jTCarri.getModel();
-		//lerJTableItemCompra();
+		lerJTableItemCompra();
 		
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setBounds(0, 295, 820, 2);
@@ -498,13 +498,10 @@ public class TelaFornecedor extends JPanel {
 		});
 		btnExcluirCompra.setBounds(153, 387, 133, 31);
 		lblCompra.add(btnExcluirCompra);
-		/*
 		
 		populaBoxFrn();//Metodo não testado
 		populaBoxProd();//Metodo não testado
 		populaBoxCmp();
-		*/
-		
 
 		JLabel lblClientes = new JLabel("Fornecedor");
 		lblClientes.setHorizontalTextPosition(SwingConstants.CENTER);

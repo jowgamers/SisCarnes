@@ -250,7 +250,7 @@ public class TelaVendedor extends JPanel {
 		lblCadastrar.add(txtEmlVnd);
 		
 		DefaultTableModel modelo = (DefaultTableModel) jTVend.getModel();
-		//lerJTable();
+		lerJTable();
 		
 		JLabel lblMetaMensal_1 = new JLabel("Meta Mensal : ");
 		lblMetaMensal_1.setBounds(41, 291, 97, 14);

@@ -328,7 +328,7 @@ public class TelaCliente extends JPanel {
 		
 		
 		DefaultTableModel modelo = (DefaultTableModel) jTCli.getModel();
-		//lerJTable();
+		lerJTable();
 		
 		
 		
@@ -484,8 +484,9 @@ public class TelaCliente extends JPanel {
 						formaPagto= 2 ;
 					v.setFormaPagto(formaPagto);
 					
+					
 					//Num carrinho
-					v.setNumVenda(Integer.parseInt(txtNumCompra.getText()));
+					v.setIdItemVenda(Integer.parseInt(txtNumCompra.getText()));
 					
 					//Salva no BD
 					vDAO.create(v);
@@ -509,7 +510,7 @@ public class TelaCliente extends JPanel {
 
 
 		DefaultTableModel modeloItemCompra = (DefaultTableModel) jTCarri.getModel();
-		//lerJTableItemVenda();
+		lerJTableItemVenda();
 		
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setBounds(0, 295, 820, 2);
@@ -585,10 +586,10 @@ public class TelaCliente extends JPanel {
 		buttonGroup.add(rdbtnAPrazo);
 		rdbtnAPrazo.setBounds(468, 320, 63, 23);
 		lblVenda.add(rdbtnAPrazo);
-		/*populaBoxCli();
+		populaBoxCli();
 		populaBoxProd();
 		populaBoxCmp();
-		populaBoxVnd();*/
+		populaBoxVnd();
 		
 		JLabel lblClientes = new JLabel("Clientes : ");
 		lblClientes.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -646,7 +647,7 @@ public class TelaCliente extends JPanel {
 		ClienteDAO cDAO = new ClienteDAO();
 
 		for (Cliente c : cDAO.read()) {
-			modelo.addRow(new Object[] { c.getCodigo(), c.getNome(),  c.getCpf(),c.getTelefones(), c.getEmail(), c.getDataCad(), c.getLimiteCredito()
+			modelo.addRow(new Object[] { c.getCodigo(), c.getNome(), c.getTelefones(),c.getCpf(), c.getEmail(), c.getDataCad(),  c.getLimiteCredito()
 
 			});
 		}
@@ -659,7 +660,7 @@ public class TelaCliente extends JPanel {
 		ClienteDAO cDAO = new ClienteDAO();
 
 		for (Cliente c : cDAO.imprimirOrdemAlfabetica()) {
-			modelo.addRow(new Object[] { c.getCodigo(), c.getNome(),  c.getCpf(),c.getTelefones(), c.getEmail(), c.getDataCad(), c.getLimiteCredito()
+			modelo.addRow(new Object[] { c.getCodigo(), c.getNome(), c.getTelefones(),c.getCpf(), c.getEmail(), c.getDataCad(),  c.getLimiteCredito()
 
 			});
 		}
@@ -685,7 +686,7 @@ public class TelaCliente extends JPanel {
 		ClienteDAO cDAO = new ClienteDAO();
 
 		for (Cliente c : cDAO.buscaPorCpf(cpfCli)) {
-			modelo.addRow(new Object[] { c.getCodigo(), c.getNome(), c.getTelefones(), c.getEmail(), c.getDataCad(), c.getCpf(), c.getLimiteCredito()
+			modelo.addRow(new Object[] { c.getCodigo(), c.getNome(), c.getTelefones(),c.getCpf(), c.getEmail(), c.getDataCad(),  c.getLimiteCredito()
 
 			});
 		}

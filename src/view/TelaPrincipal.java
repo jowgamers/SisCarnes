@@ -94,11 +94,10 @@ public class TelaPrincipal extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		/*
-		 * qntFrn = dUtil.qntdRegis("fornecedores"); qntCli =
-		 * dUtil.qntdRegis("clientes"); qntProd = dUtil.qntdRegis("produtos"); qntVnd =
-		 * dUtil.qntdRegis("vendedores");
-		 */
+		 qntFrn = dUtil.qntdRegis("fornecedores"); qntCli =
+		 dUtil.qntdRegis("clientes"); qntProd = dUtil.qntdRegis("produtos"); qntVnd =
+		  dUtil.qntdRegis("vendedores");
+
 
 		JPanel panel = new JPanel();
 		panel.setBorder(null);
@@ -106,6 +105,11 @@ public class TelaPrincipal extends JFrame {
 		panel.setBounds(0, 0, 153, 580);
 		contentPane.add(panel);
 		panel.setLayout(null);
+		
+		JLabel lblJoao = new JLabel("Joao");
+		lblJoao.setForeground(Color.WHITE);
+		lblJoao.setBounds(68, 103, 46, 14);
+		panel.add(lblJoao);
 
 		JButton btnVendedor = new JButton("");
 		btnVendedor.setIcon(new ImageIcon(TelaPrincipal.class.getResource("/imagens/vendedores.png")));
@@ -152,12 +156,6 @@ public class TelaPrincipal extends JFrame {
 		btnInicial.setBounds(0, 133, 155, 35);
 		panel.add(btnInicial);
 
-		JLabel lblNome = new JLabel("Joao");
-		lblNome.setBounds(59, 66, 37, 14);
-		panel.add(lblNome);
-		lblNome.setForeground(SystemColor.desktop);
-		lblNome.setFont(new Font("Tahoma", Font.PLAIN, 14));
-
 		JButton btnImprimir = new JButton("");
 		btnImprimir.setRolloverIcon(new ImageIcon(TelaPrincipal.class.getResource("/imagens/consultahvr.png")));
 		btnImprimir.setIcon(new ImageIcon(TelaPrincipal.class.getResource("/imagens/consulta.png")));
@@ -166,6 +164,13 @@ public class TelaPrincipal extends JFrame {
 		btnImprimir.setContentAreaFilled(false);
 		btnImprimir.setBounds(0, 433, 155, 35);
 		panel.add(btnImprimir);
+		
+				JLabel lblNome = new JLabel("");
+				lblNome.setBounds(32, 8, 122, 112);
+				panel.add(lblNome);
+				lblNome.setIcon(new ImageIcon(TelaPrincipal.class.getResource("/imagens/avatar.png")));
+				lblNome.setForeground(SystemColor.desktop);
+				lblNome.setFont(new Font("Tahoma", Font.PLAIN, 14));
 
 		JPanel panelInicial = new JPanel();
 		panelInicial.setBounds(155, 25, 825, 555);
@@ -187,63 +192,68 @@ public class TelaPrincipal extends JFrame {
 		JLabel lblClientes = new JLabel("Clientes");
 		lblClientes.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblClientes.setForeground(Color.WHITE);
-		lblClientes.setBounds(284, 105, 46, 14);
+		lblClientes.setBounds(284, 65, 46, 14);
 		panelPrinc.add(lblClientes);
 
 		JLabel lblVendedores = new JLabel("Vendedores");
 		lblVendedores.setForeground(Color.WHITE);
 		lblVendedores.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblVendedores.setBounds(63, 105, 68, 14);
+		lblVendedores.setBounds(63, 65, 68, 14);
 		panelPrinc.add(lblVendedores);
 
 		JLabel lblFornecedores = new JLabel("Fornecedores");
 		lblFornecedores.setForeground(Color.WHITE);
 		lblFornecedores.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblFornecedores.setBounds(688, 105, 78, 14);
+		lblFornecedores.setBounds(688, 65, 78, 14);
 		panelPrinc.add(lblFornecedores);
 
 		JLabel lblProdutos = new JLabel("Produtos");
 		lblProdutos.setForeground(Color.WHITE);
 		lblProdutos.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblProdutos.setBounds(492, 105, 50, 14);
+		lblProdutos.setBounds(492, 65, 50, 14);
 		panelPrinc.add(lblProdutos);
 
 		DAOUtil dUtil = new DAOUtil();
 
-		JLabel lblCli = new JLabel("1");
-		// lblCli = new JLabel(qntCli);
+		// JLabel lblCli = new JLabel("1");
+		 lblCli = new JLabel(qntCli);
+		 lblCli.setHorizontalAlignment(SwingConstants.CENTER);
 		// JLabel lblCli = new JLabel(dUtil.qntdRegis("clientes"));
-		lblCli.setForeground(SystemColor.desktop);
-		lblCli.setFont(new Font("Tahoma", Font.PLAIN, 28));
-		lblCli.setBounds(300, 71, 15, 34);
+		lblCli.setForeground(new Color(25,100,126));
+		lblCli.setFont(new Font("Tahoma", Font.PLAIN, 38));
+		lblCli.setBounds(284, 11, 46, 54);
 		panelPrinc.add(lblCli);
 
-		JLabel lblVend = new JLabel("1");
-		// lblVend = new JLabel(qntVnd);
+		// JLabel lblVend = new JLabel("1");
+		 lblVend = new JLabel(qntVnd);
+		 lblVend.setHorizontalAlignment(SwingConstants.CENTER);
 		// JLabel lblVend = new JLabel(dUtil.qntdRegis("vendedores"));
-		lblVend.setForeground(SystemColor.desktop);
-		lblVend.setFont(new Font("Tahoma", Font.PLAIN, 28));
-		lblVend.setBounds(90, 71, 15, 34);
+		lblVend.setForeground(new Color(92,128,188));
+		lblVend.setFont(new Font("Tahoma", Font.PLAIN, 38));
+		lblVend.setBounds(63, 11, 68, 54);
 		panelPrinc.add(lblVend);
 
-		JLabel lblFrn = new JLabel("1");
-		// lblFrn = new JLabel(qntFrn);
+		// JLabel lblFrn = new JLabel("1");
+		 lblFrn = new JLabel(qntFrn);
+		 lblFrn.setHorizontalAlignment(SwingConstants.CENTER);
 		// JLabel lblFrn = new JLabel(dUtil.qntdRegis("fornecedores"));
-		lblFrn.setForeground(SystemColor.desktop);
-		lblFrn.setFont(new Font("Tahoma", Font.PLAIN, 28));
-		lblFrn.setBounds(720, 71, 15, 34);
+		lblFrn.setForeground(new Color(25,100,126));
+		lblFrn.setFont(new Font("Tahoma", Font.PLAIN, 38));
+		lblFrn.setBounds(688, 11, 78, 54);
 		panelPrinc.add(lblFrn);
 
-		JLabel lblProd = new JLabel("1");
-		// lblProd = new JLabel(qntProd);
+		// JLabel lblProd = new JLabel("1");
+		 lblProd = new JLabel(qntProd);
+		 lblProd.setHorizontalAlignment(SwingConstants.CENTER);
 		// JLabel lblProd =new JLabel(dUtil.qntdRegis("produtos"));
-		lblProd.setForeground(SystemColor.desktop);
-		lblProd.setFont(new Font("Tahoma", Font.PLAIN, 28));
-		lblProd.setBounds(510, 71, 15, 34);
+		lblProd.setForeground(new Color(92,128,188));
+		lblProd.setFont(new Font("Tahoma", Font.PLAIN, 38));
+		lblProd.setBounds(492, 11, 50, 54);
 		panelPrinc.add(lblProd);
 
-		JLabel lblLogo = new JLabel("LOGO");
-		lblLogo.setBounds(274, 156, 277, 242);
+		JLabel lblLogo = new JLabel("");
+		lblLogo.setIcon(new ImageIcon(TelaPrincipal.class.getResource("/imagens/logo.png")));
+		lblLogo.setBounds(97, 100, 631, 448);
 		panelPrinc.add(lblLogo);
 		lblLogo.setHorizontalAlignment(SwingConstants.CENTER);
 
@@ -294,15 +304,15 @@ public class TelaPrincipal extends JFrame {
 
 		btnInicial.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				/*
-				 * qntFrn = dUtil.qntdRegis("fornecedores"); lblFrn.setText(qntFrn);
-				 * 
-				 * qntCli = dUtil.qntdRegis("clientes"); lblCli.setText(qntCli);
-				 * 
-				 * qntProd = dUtil.qntdRegis("produtos"); lblProd.setText(qntProd);
-				 * 
-				 * qntVnd = dUtil.qntdRegis("vendedores"); lblVend.setText(qntVnd);
-				 */
+				
+				  qntFrn = dUtil.qntdRegis("fornecedores"); lblFrn.setText(qntFrn);
+				  
+				  qntCli = dUtil.qntdRegis("clientes"); lblCli.setText(qntCli);
+				  
+				  qntProd = dUtil.qntdRegis("produtos"); lblProd.setText(qntProd);
+				  
+				 qntVnd = dUtil.qntdRegis("vendedores"); lblVend.setText(qntVnd);
+				 
 				trocarPanel(panelPrinc);
 			}
 		});

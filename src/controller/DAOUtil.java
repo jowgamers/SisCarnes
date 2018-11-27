@@ -74,7 +74,6 @@ public class DAOUtil {
 				and v.dta_vnd between ? and ?
 				group by v.cod_cli ; 
 			 */
-			//stmt = con.prepareStatement("SELECT * FROM produtos");
 			stmt = con.prepareStatement("SELECT c.nom_cli as nome, count(v.num_vnd) as qntde, sum(iv.vlr_vnd) as total FROM venda as v, clientes as c, itemvenda as iv where v.cod_cli = c.cod_cli and v.id_itm_vnd = iv.num_vnd and v.dta_vnd between ? and ? group by v.cod_cli ; ");
 			stmt.setString(1, data1 + "%");
 			stmt.setString(2, data2 + "%");
@@ -113,7 +112,7 @@ public class DAOUtil {
 		List<Estastiticas> listaEstastiticas = new ArrayList<Estastiticas>();
 
 		try {
-			stmt = con.prepareStatement("SELECT vende.nom_vnd as nome, count(v.num_vnd) as qntde, sum(iv.vlr_vnd) as total FROM venda as v, vendedores as vende, itemvenda as iv where vende.cod_vnd = v.cod_vnd and v.id_itm_vnd = iv.num_vnd and v.dta_vnd between ? and ? group by vende.cod_cli ; ");
+			stmt = con.prepareStatement("SELECT vende.nom_vnd as nome, count(v.num_vnd) as qntde, sum(iv.vlr_vnd) as total FROM venda as v, vendedores as vende, itemvenda as iv where vende.cod_vnd = v.cod_vnd and v.id_itm_vnd = iv.num_vnd and v.dta_vnd between ? and ? group by vende.cod_vnd ; ");
 			stmt.setString(1, data1 + "%");
 			stmt.setString(2, data2 + "%");
 			rs = stmt.executeQuery();

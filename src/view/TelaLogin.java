@@ -36,6 +36,7 @@ import model.Usuario;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Rectangle;
+import javax.swing.ImageIcon;
 
 public class TelaLogin extends JFrame {
 
@@ -119,28 +120,34 @@ public class TelaLogin extends JFrame {
 		mnOpes.add(btnNewButton);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(0, 0, 339, 480);
+		panel.setBounds(0, 0, 402, 400);
 		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(TelaLogin.class.getResource("/imagens/login.jpg")));
+		lblNewLabel.setBounds(-14, -24, 577, 434);
+		panel.add(lblNewLabel);
 		
 		txtMatricula = new JTextField();
-		txtMatricula.setBounds(394, 140, 200, 30);
+		txtMatricula.setBounds(412, 139, 200, 30);
 		contentPane.add(txtMatricula);
 		txtMatricula.setColumns(10);
 		
 		JLabel lblMatricula = new JLabel("Matricula : ");
 		lblMatricula.setForeground(Color.WHITE);
 		lblMatricula.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblMatricula.setBounds(394, 115, 72, 14);
+		lblMatricula.setBounds(412, 114, 72, 14);
 		contentPane.add(lblMatricula);
 		
 		JLabel lblSenha = new JLabel("Senha : ");
 		lblSenha.setForeground(Color.WHITE);
 		lblSenha.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblSenha.setBounds(394, 181, 55, 14);
+		lblSenha.setBounds(412, 180, 55, 14);
 		contentPane.add(lblSenha);
 		
 		txtSenha = new JPasswordField();
-		txtSenha.setBounds(394, 206, 200, 30);
+		txtSenha.setBounds(412, 205, 200, 30);
 		contentPane.add(txtSenha);
 		
 		JButton btnEntrar = new JButton("Entrar");
@@ -162,7 +169,7 @@ public class TelaLogin extends JFrame {
 		});
 		btnEntrar.setForeground(Color.DARK_GRAY);
 		btnEntrar.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		btnEntrar.setBounds(394, 312, 102, 34);
+		btnEntrar.setBounds(412, 311, 102, 34);
 		contentPane.add(btnEntrar);
 		
 		JButton btnFechar = new JButton("Fechar");
@@ -173,7 +180,7 @@ public class TelaLogin extends JFrame {
 		});
 		btnFechar.setForeground(Color.DARK_GRAY);
 		btnFechar.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		btnFechar.setBounds(532, 312, 102, 34);
+		btnFechar.setBounds(550, 311, 102, 34);
 		contentPane.add(btnFechar);
 	}
 	

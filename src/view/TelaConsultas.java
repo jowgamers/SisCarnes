@@ -34,8 +34,7 @@ public class TelaConsultas extends JPanel {
 		setBounds(0, 0, 825, 555);
 		setLayout(null);
 		
-		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.LEFT);
-		tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
+		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(0, 0, 825, 555);
 		tabbedPane.setForeground(Color.WHITE);
 		add(tabbedPane);
@@ -46,7 +45,7 @@ public class TelaConsultas extends JPanel {
 		pnlForne.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 120, 701, 419);
+		scrollPane.setBounds(10, 120, 800, 396);
 		pnlForne.add(scrollPane);
 		
 		tableVendas = new JTable();
@@ -78,7 +77,7 @@ public class TelaConsultas extends JPanel {
 		tableVendas.getColumnModel().getColumn(5).setPreferredWidth(115);
 		
 		DefaultTableModel modelo = (DefaultTableModel) tableVendas.getModel();
-		//lerJTable();
+		lerJTable();
 		
 		scrollPane.setViewportView(tableVendas);
 		
@@ -100,7 +99,7 @@ public class TelaConsultas extends JPanel {
 				lerJTableOrdena("cod_vnd");
 			}
 		});
-		btnVendedoresPorPerodo.setBounds(473, 56, 237, 34);
+		btnVendedoresPorPerodo.setBounds(573, 56, 237, 34);
 		pnlForne.add(btnVendedoresPorPerodo);
 		
 		JPanel pnlCompras = new JPanel();
@@ -109,7 +108,7 @@ public class TelaConsultas extends JPanel {
 		pnlCompras.setLayout(null);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(10, 120, 701, 419);
+		scrollPane_1.setBounds(10, 120, 800, 396);
 		pnlCompras.add(scrollPane_1);
 		
 		table = new JTable();
@@ -136,7 +135,10 @@ public class TelaConsultas extends JPanel {
 		
 		
 		DefaultTableModel modeloCompra = (DefaultTableModel) table.getModel();
-		//lerJTableCompras();
+		lerJTableCompras();
+		
+		
+		
 		
 		JButton btnFornecedoresPorPerodo = new JButton("Fornecedores por per\u00EDodo de compras");
 		btnFornecedoresPorPerodo.setBounds(10, 56, 237, 34);
@@ -145,10 +147,10 @@ public class TelaConsultas extends JPanel {
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
 		panel.setBackground(new Color(48, 50, 61));
-		tabbedPane.addTab("New tab", null, panel, null);
+		tabbedPane.addTab("Estastiticas", null, panel, null);
 		
 		JScrollPane scrollPane_2 = new JScrollPane();
-		scrollPane_2.setBounds(10, 120, 701, 419);
+		scrollPane_2.setBounds(10, 120, 800, 396);
 		panel.add(scrollPane_2);
 		
 		tableEstatic = new JTable();
@@ -176,7 +178,7 @@ public class TelaConsultas extends JPanel {
 				lerJTableEstaVende(txtData1.getText(), txtData2.getText());
 			}
 		});
-		button.setBounds(284, 11, 163, 34);
+		button.setBounds(524, 56, 163, 34);
 		panel.add(button);
 		
 		JButton button_1 = new JButton("Estasticas Clientes");
@@ -186,11 +188,11 @@ public class TelaConsultas extends JPanel {
 				lerJTableEsta(txtData1.getText(), txtData2.getText());
 			}
 		});
-		button_1.setBounds(284, 56, 163, 34);
+		button_1.setBounds(351, 56, 163, 34);
 		panel.add(button_1);
 		
 		JButton button_2 = new JButton("Fornecedores por per\u00EDodo de compras");
-		button_2.setBounds(457, 56, 163, 34);
+		button_2.setBounds(387, 11, 264, 34);
 		panel.add(button_2);
 		
 		txtData1 = new JTextField();
@@ -214,6 +216,12 @@ public class TelaConsultas extends JPanel {
 		label.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		label.setBounds(106, 65, 16, 14);
 		panel.add(label);
+		
+		JLabel lblAaaammdd = new JLabel("AAAA-MM-DD");
+		lblAaaammdd.setForeground(Color.WHITE);
+		lblAaaammdd.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblAaaammdd.setBounds(71, 95, 163, 14);
+		panel.add(lblAaaammdd);
 	}
 	
 	public void lerJTable() {
@@ -222,7 +230,7 @@ public class TelaConsultas extends JPanel {
 		VendaDAO vDAO = new VendaDAO();
 
 		for (Venda v : vDAO.read()) {
-			modelo.addRow(new Object[] { v.getNumVenda(), v.getVendedor(), v.getCliente(), v.getDataVenda(), v.getDataVenda(),
+			modelo.addRow(new Object[] { v.getNumVenda(), v.getVendedor(), v.getCliente(), v.getDataVenda(),
 					v.getFormaPagto(), v.getIdItemVenda()
 
 			});
@@ -248,7 +256,7 @@ public class TelaConsultas extends JPanel {
 		VendaDAO vDAO = new VendaDAO();
 
 		for (Venda v : vDAO.readPorPeriodoOrdemCliente(concatena)) {
-			modelo.addRow(new Object[] { v.getNumVenda(), v.getVendedor(), v.getCliente(), v.getDataVenda(), v.getDataVenda(),
+			modelo.addRow(new Object[] { v.getNumVenda(), v.getVendedor(), v.getCliente(), v.getDataVenda(),
 					v.getFormaPagto(), v.getIdItemVenda()
 
 			});
@@ -280,5 +288,4 @@ public class TelaConsultas extends JPanel {
 		}
 
 	}
-	
 }

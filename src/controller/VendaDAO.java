@@ -35,13 +35,12 @@ public class VendaDAO {
 		// Falta fechar a conexão com o banco
 		try {
 			stmt = con.prepareStatement(
-					"INSERT INTO venda (id_itm_vnd,cod_vnd, cod_cli, dta_vnd, frm_pgt, id_itm_vnd) VALUES (?,?,?,NOW(),?,?) ");
+					"INSERT INTO venda (id_itm_vnd,cod_vnd, cod_cli, dta_vnd, frm_pgt) VALUES (?,?,?,NOW(),?) ");
 
 			stmt.setInt(1, v.getIdItemVenda());
 			stmt.setInt(2, v.getVendedor());
 			stmt.setInt(3, v.getCliente());
 			stmt.setInt(4, v.getFormaPagto());
-			stmt.setInt(5, v.getIdItemVenda());
 			
 			stmt.executeUpdate();
 

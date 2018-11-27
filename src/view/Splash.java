@@ -19,7 +19,7 @@ public class Splash extends JFrame {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         setUndecorated(true);
-        img = new ImageIcon(getClass().getResource("/imagens/cow.png"));
+        img = new ImageIcon(getClass().getResource("/imagens/bg.jpg"));
         imglabel = new JLabel(img);
         getContentPane().add(imglabel);
         getContentPane().setLayout(null);
@@ -27,8 +27,8 @@ public class Splash extends JFrame {
         pbar.setMinimum(0);
         pbar.setMaximum(100);
         pbar.setStringPainted(true);
-        pbar.setForeground(Color.LIGHT_GRAY);
-        imglabel.setBounds(0, 0, 404, 310);
+        pbar.setForeground(new Color(220, 20, 60));
+        imglabel.setBounds(-2, -16, 404, 310);
         getContentPane().add(pbar);
         pbar.setPreferredSize(new Dimension(310, 30));
         pbar.setBounds(0, 290, 404, 20);
